@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from "./header/header.component";
 import { UserComponent } from "./user/user.component";
+import { USERS_LIST } from "./users-list";
 @Component({
   selector: 'app-root',
   imports: [HeaderComponent, UserComponent],
@@ -8,5 +9,5 @@ import { UserComponent } from "./user/user.component";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'angular-app';
+  users = USERS_LIST;
 }
