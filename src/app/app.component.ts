@@ -10,4 +10,8 @@ import { USERS_LIST } from "./users-list";
 })
 export class AppComponent {
   users = USERS_LIST;
+
+  onUserClick(id: string) {
+    console.log('User clicked ' + id + ' On ' + new Date().toLocaleString());
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, EventEmitter, Input, input, Output } from '@angular/core';
 
 // const randomUser = Math.floor(Math.random() * USERS_LIST.length);
 
@@ -39,18 +39,23 @@ export class UserComponent {
   //   this.selectedUser.set(USERS_LIST[randomUser]);
   // }
 
-  // Decorator Approach
+  // Decorator Input Approach
+  @Input({required:true}) id !: string;
   @Input({ required: true }) avatar !: string;
   // @Input({ required: true }) name !: string;
 
-  // Signal Approach
+  // Signal Input Approach
   name = input.required<string>();
+
+  // Decorator Output Approach
+  @Output() userClick = new EventEmitter();
 
   get avatarPath() {
     return 'assets/user/' + this.avatar;
   }
 
   onUserClick() {
+    this.userClick.emit(this.id);
     console.log('User clicked ' + this.name + ' On ' + new Date().toLocaleString());
   }
 
