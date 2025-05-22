@@ -48,7 +48,7 @@ export class UserComponent {
   name = input.required<string>();
 
   // Decorator Output Approach
-  @Output() userClick = new EventEmitter();
+  @Output() userClick = new EventEmitter<string>();
 
   get avatarPath() {
     return 'assets/user/' + this.avatar;

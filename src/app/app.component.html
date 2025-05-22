@@ -11,4 +11,5 @@
             <app-user [id]="users[2].id" [avatar]="users[2].avatar" [name]="users[2].name" (userClick)="onUserClick($event)" />
         </li>
     </ul>
+    <app-tasks [name]="selectedUser.name"/>
 </main>
